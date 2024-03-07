@@ -1,7 +1,12 @@
+import { useState } from 'react';
 import './Form.scss'
 import { Link } from "react-router-dom";
 
 function Form() {
+    // Stockage des valeurs des champs du formulaire
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
     return (
         <form>
             <div className="input-wrapper">
