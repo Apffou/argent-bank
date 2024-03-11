@@ -11,6 +11,6 @@ const userSlice = createSlice({
             // Une action pour indiquer une erreur à l'utilisateur
             // Une action si il coche la case remember me
         },
-        signOut: () => { },
+        signOut: (state, action) => { },
     }
 });
