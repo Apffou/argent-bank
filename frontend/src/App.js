@@ -6,13 +6,14 @@ import SignIn from './Pages/SignIn.js'
 import User from './Pages/User.js';
 import { Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import store from '../src/Redux/Store/Store.js'
 
 // Provider permet de rendre le store disponible dans tous les composants React
 
 function App() {
   return (
 
-    <Provider>
+    <Provider store={store}>
       <>
         <header >
           <Nav></Nav>
