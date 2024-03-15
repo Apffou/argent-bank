@@ -6,11 +6,12 @@ import { setSignIn } from '../../Redux/Reducers/userSlice';
 import { selectIsConnected } from '../../Redux/Selectors';
 
 
-function Form() {
+export default function Form() {
 
     const dispatch = useDispatch(); // Permet de déclencher une action du store
     const navigate = useNavigate(); // Permet de naviger entre différentes pages
 
+    // Utilisation du sélecteur pour accéder à l'état d'authentification
     const isConnected = useSelector(selectIsConnected);
 
     // Stockage des valeurs des champs du formulaire
@@ -83,5 +84,3 @@ function Form() {
         </form>
     )
 }
-
-export default Form();
