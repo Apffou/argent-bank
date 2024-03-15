@@ -9,6 +9,8 @@ const initialState = {
     //Propriété d'authentification
     token: checkToken(), // Initialisation du Token grâce à la valeur donné par chekToken()
 
+    userConnexion: false,
+
     //Propriété pour la gestion des erreurs
     error: null, //Aucune erreur initialement
 };
@@ -19,11 +21,15 @@ const userSlice = createSlice({
     name: "user", //nom du slice
     initialState, // État initial
     reducers: {
-        setSignIn: (state, action) => { // Une action pour se connecter
-            state.token = action.payload.token;
-            // A FAIRE : Une action si il coche la case remember me
+        setSignIn: (state, action) => {
+            state.token = action.payload.token; // Mise à jour de la valeur du token 
+            state.userConnexion = true; // L'utilisateur est connecté
         },
-        signOut: (state, action) => { },
+        signOut: (state, action) => {
+            state.token = null; // Réinitialisation du Token
+            state.userConnexion = false; // L'utilisateur n'est plus connecté
+            localStorage.removeItem('validToken'); // Suppresion du Token dans le localstorage
+        },
 
         //Réducteur pour définir une erreur
         setError(state, action) {
@@ -36,3 +42,8 @@ const userSlice = createSlice({
         },
     }
 });
+//Exportation des actions générées par le slice
+export const { setSignIn, signOut, setError, clearError } = userSlice.actions;
+
+// Exportation du reducer 
+export default userSlice.reducer;
