@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './Form.scss'
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { setSignIn } from '../../Redux/Reducers/userSlice';
 import { selectIsConnected } from '../../Redux/Selectors';
@@ -45,16 +45,18 @@ function Form() {
                 body: JSON.stringify(formData),
             })
 
-            //Si la requête est réussi alors on 
+            //Si la requête est réussi alors on extrait et stocke le jeton et on redirige vers la page
             if (response.ok) {
                 const responseData = await response.json();
                 const token = responseData.body.token;
                 localStorage.setItem('validToken', token);
                 navigate('/user');
                 dispatch(setSignIn({ token }));
+                //Sinon on envoit l'erreur
             } else {
                 handleError(response);
             }
+            //Gestion des erreurs avec mise à jour du message dans le formulaire
         } catch (error) {
             console.error('Erreur :', error);
             setErrorMessage('Une erreur s\'est produite');
