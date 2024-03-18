@@ -32,14 +32,28 @@ const userSlice = createSlice({
         },
 
         //Réducteur pour définir une erreur
-        setError(state, action) {
+        setError: (state, action) => {
             state.error = action.payload;
         },
 
         //Réducteur pour effacer l'erreur
-        clearError(state) {
+        clearError: (state) => {
             state.error = null; //Rénitialise l'erreur à null
         },
+
+        //Reducteur pour mettre à jour les informations du profil utilisateur
+        userProfile: (state, action) => {
+            state.firstName = action.payload.body.firstName;
+            state.lastName = action.payload.body.lastName;
+            state.userName = action.payload.body.userName;
+            state.email = action.payload.body.email;
+        },
+
+        updateUsername: (state, action) => {
+            state.username = action.payload;
+        }
+
+
     }
 });
 //Exportation des actions générées par le slice

@@ -11,6 +11,8 @@ function Nav() {
                 <img className="main-nav-logo-image" src="./img/argentBankLogo.webp" alt="Argent Bank Logo" />
                 <h1 className="sr-only">Argent Bank</h1>
             </NavLink>
+
+
             <div>
                 <Item text="Sign In" to="/login" classIcon="fa fa-user-circle"></Item>
                 <Item text="Sign Out" to="/" classIcon="fa fa-sign-out"></Item>
