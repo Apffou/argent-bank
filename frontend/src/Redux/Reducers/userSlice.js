@@ -17,7 +17,7 @@ const initialState = {
     // Initialisation des Champs pour le profil utilisateur
     firstName: '',
     lastName: '',
-    userName: '',
+    userName: '' || 'Pseudo',
     email: '',
 };
 

@@ -3,17 +3,23 @@ import Item from '../Item/Item';
 import './Nav.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSignIn, signOut } from '../../Redux/Reducers/userSlice';
+import { selectIsConnected } from '../../Redux/Selectors';
 
 /*  Faire une condition, si on a le token on affiche tel rendu sinon rendu de base*/
 
 export default function Nav() {
 
     //On récupère la valeur de userConnexion depuis le store
-    const isAuthenticated = useSelector((state) => state.user.userConnexion);
+    const isAuthenticated = useSelector(selectIsConnected);
+
+    const userName = useSelector((state) => state.user.userName);
 
     // Utilisaton du hook useDispatch pour obtenir la fonction de dispatch du store Redux
     const dispatch = useDispatch();
 
+    const handleSignout = () => {
+        dispatch(signOut());
+    }
 
 
     return (
@@ -25,10 +31,16 @@ export default function Nav() {
 
 
             <div>
-                <Item text="Sign In" to="/login" classIcon="fa fa-user-circle"></Item>
-                <Item text="Sign Out" to="/" classIcon="fa fa-sign-out"></Item>
-                { /* Inserer ici la fonction pour mettre le bon prénom dynamiquement */}
-                <Item text="Tony" to="/user" classIcon="fa fa-user-circle"></Item>
+                {isAuthenticated ? (
+                    <>
+                        <Item text={userName} to="/user" classIcon="fa fa-user-circle"></Item>
+                        <Item text="Sign Out" to="/" onClick={handleSignout} classIcon="fa fa-sign-out"></Item>
+                    </>
+                ) : (
+                    <Item text="Sign In" to="/login" classIcon="fa fa-user-circle"></Item>
+                )}
+
+
             </div>
         </nav >
     )
