@@ -79,8 +79,8 @@ export default function Form() {
                 <label for="remember-me">Remember me</label>
             </div>
             <button className="sign-in-button" type='submit'>Sign In</button>
-            {errorMessage && <p className='errorMessage'>{errorMessage} </p>}
-            {isConnected && <p className='isConnected'>Connexion réussi ! </p>}
+            {errorMessage && <p className='userconnection errorMessage'>{errorMessage} </p>}
+            {isConnected && <p className='userconnection'>Connexion réussi ! </p>}
         </form>
     )
 }
