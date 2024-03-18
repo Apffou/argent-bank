@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setSignIn, signOut } from '../../Redux/Reducers/userSlice';
 import { selectIsConnected } from '../../Redux/Selectors';
 
-/*  Faire une condition, si on a le token on affiche tel rendu sinon rendu de base*/
 
 export default function Nav() {
 
@@ -17,9 +16,14 @@ export default function Nav() {
     // Utilisaton du hook useDispatch pour obtenir la fonction de dispatch du store Redux
     const dispatch = useDispatch();
 
+    //const handleSignIn = () => {
+    //   dispatch(setSignIn());
+    //};
+
     const handleSignout = () => {
         dispatch(signOut());
-    }
+        console.log("deco?")
+    };
 
 
     return (

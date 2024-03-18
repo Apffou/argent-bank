@@ -31,7 +31,7 @@ const userSlice = createSlice({
             state.token = action.payload.token; // Mise à jour de la valeur du token 
             state.userConnexion = true; // L'utilisateur est connecté
         },
-        signOut: (state, action) => {
+        signOut: (state) => {
             state.token = null; // Réinitialisation du Token
             state.userConnexion = false; // L'utilisateur n'est plus connecté
             localStorage.removeItem('validToken'); // Suppresion du Token dans le localstorage
@@ -56,14 +56,14 @@ const userSlice = createSlice({
         },
 
         updateUsername: (state, action) => {
-            state.username = action.payload;
+            state.userName = action.payload;
         }
 
 
     }
 });
 //Exportation des actions générées par le slice
-export const { setSignIn, signOut, setError, clearError } = userSlice.actions;
+export const { setSignIn, signOut, setError, clearError, userProfile, updateUsername } = userSlice.actions;
 
 // Exportation du reducer 
 export default userSlice.reducer;
