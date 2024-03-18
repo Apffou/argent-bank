@@ -13,6 +13,12 @@ const initialState = {
 
     //Propriété pour la gestion des erreurs
     error: null, //Aucune erreur initialement
+
+    // Initialisation des Champs pour le profil utilisateur
+    firstName: '',
+    lastName: '',
+    userName: '',
+    email: '',
 };
 
 
