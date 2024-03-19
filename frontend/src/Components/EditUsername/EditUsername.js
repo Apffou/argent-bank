@@ -17,7 +17,7 @@ export default function EditUsername() {
             <div>
                 <form>
                     <label htmlFor="">User Name</label>
-                    <input type="text" placeholder="Pseudo" />
+                    <input type="text" placeholder={userName} />
                     <label htmlFor="">First Name {firstName} </label>
                     <input type="text" placeholder={firstName} readOnly />
                     <label htmlFor="">Last Name</label>
