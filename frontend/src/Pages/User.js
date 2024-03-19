@@ -2,12 +2,15 @@ import { useDispatch, useSelector } from "react-redux";
 import Account from "../Components/Account/Account";
 import EditUsername from "../Components/EditUsername/EditUsername";
 import { selectIsConnected } from "../Redux/Selectors";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 function User() {
 
     const dispatch = useDispatch();
     const isConnected = useSelector(selectIsConnected);
+    const navigate = useNavigate(); // Permet de naviger entre différentes pages
 
     // Vérifie si l'utilisateur est connecté lors du chargement initial du composant
     useEffect(() => {
