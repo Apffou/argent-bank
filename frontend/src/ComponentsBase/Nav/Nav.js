@@ -16,13 +16,8 @@ export default function Nav() {
     // Utilisaton du hook useDispatch pour obtenir la fonction de dispatch du store Redux
     const dispatch = useDispatch();
 
-    //const handleSignIn = () => {
-    //   dispatch(setSignIn());
-    //};
-
     const handleSignout = () => {
         dispatch(signOut());
-        console.log("deco?")
     };
 
 
@@ -32,7 +27,6 @@ export default function Nav() {
                 <img className="main-nav-logo-image" src="./img/argentBankLogo.webp" alt="Argent Bank Logo" />
                 <h1 className="sr-only">Argent Bank</h1>
             </NavLink>
-
 
             <div>
                 {isAuthenticated ? (
