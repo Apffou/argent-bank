@@ -1,8 +1,24 @@
+import { useDispatch, useSelector } from "react-redux";
 import Account from "../Components/Account/Account";
 import EditUsername from "../Components/EditUsername/EditUsername";
+import { selectIsConnected } from "../Redux/Selectors";
 
 
 function User() {
+
+    const dispatch = useDispatch();
+    const isConnected = useSelector(selectIsConnected);
+
+    // Vérifie si l'utilisateur est connecté lors du chargement initial du composant
+    useEffect(() => {
+        // si il n'est pas connecté
+        if (!isConnected) {
+            // On redirige l'utilisateur vers la page de connexion
+            navigate('/login');
+        }
+        // L'effet est executé à chaque fois qu'une valeur change
+    }, [isConnected, navigate]);
+
     return (
         <body>
             <main class="main bg-dark">
