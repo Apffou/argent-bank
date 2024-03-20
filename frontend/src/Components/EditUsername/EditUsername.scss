@@ -1,0 +1,74 @@
+@mixin button-form {
+    border-color: #00bc77;
+    background-color: #00bc77;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.header {
+    color: #fff;
+    margin-bottom: 2rem;
+
+    .edit-button {
+        @include button-form()
+    }
+
+}
+
+.form-content {
+    max-width: 300px;
+    margin: auto;
+    margin-bottom: 2rem;
+    background-color: #FFF;
+    box-sizing: border-box;
+    padding: 1.5em;
+
+    h2 {
+        margin: 0 0 10px 0;
+    }
+
+    form {
+        display: grid;
+        grid-template-columns: 50% 30%;
+        margin: auto;
+        row-gap: 10px;
+        align-items: center;
+
+        input {
+            width: 95px;
+            height: 25px;
+
+            @media (min-width:768px) {
+                width: 110px;
+            }
+        }
+
+        label {
+            justify-self: end;
+            margin-right: 20px;
+
+            @media (min-width:768px) {
+                margin-right: 30px;
+            }
+        }
+    }
+}
+
+.buttons-edition {
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+    margin-top: 20px;
+
+    .button-form-edit {
+        @include button-form();
+        width: 90px;
+    }
+
+    .cancel {
+        background-color: rgb(212, 33, 33);
+        border-color: rgb(212, 33, 33);
+    }
+
+}
