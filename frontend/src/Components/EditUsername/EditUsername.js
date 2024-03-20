@@ -21,6 +21,10 @@ export default function EditUsername() {
     const handleEditClick = () => {
         setEditing(true);
     };
+    // Fonction pour fermer le formulaire sans sauvegarder les nouvelles informations
+    const handleCancelClick = () => {
+        setEditing(false);
+    }
 
     return (
         <div>
@@ -37,7 +41,7 @@ export default function EditUsername() {
                     </form>
                     <div className='buttons-edition'>
                         <button class="button-form-edit" type='submit'>Save</button>
-                        <button class="button-form-edit cancel" type='button'>Cancel</button>
+                        <button class="button-form-edit cancel" type='button' onClick={handleCancelClick}>Cancel</button>
                     </div>
                 </div>
             ) : (
