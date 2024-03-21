@@ -7,6 +7,7 @@ import User from './Pages/User.js';
 import { Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from '../src/Redux/Store/Store.js'
+import Page404 from './Pages/Page404.js';
 
 // Provider permet de rendre le store disponible dans tous les composants React
 
@@ -22,6 +23,7 @@ function App() {
           <Route path='/' element={<Home nom="Home" />} />
           <Route path='/login' element={<SignIn nom="login" />} />
           <Route path='/user' element={<User nom="user" />} />
+          <Route path='/*' element={<Page404 nom="error" />} />
         </Routes>
         <footer >
           <Footer />
