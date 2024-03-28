@@ -64,10 +64,10 @@ function User() {
 
 
     return (
-        <body>
-            <main class="main bg-dark">
+        <>
+            <main className="main bg-dark">
                 <EditUsername />
-                <h2 class="sr-only">Accounts</h2>
+                <h2 className="sr-only">Accounts</h2>
                 <Account
                     accountTitle="Argent Bank Checking (x8349)"
                     accountAmount="$2,082.79"
@@ -84,7 +84,7 @@ function User() {
                     accountAmountDescr="Current Balance" >
                 </Account>
             </main>
-        </body>
+        </>
     )
 }
 export default User;

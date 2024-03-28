@@ -2,9 +2,9 @@ import './Feature.scss'
 
 function Feature(props) {
     return (
-        <div class="feature-item">
-            <img src={props.element.image} alt={props.element.alt} class="feature-icon" />
-            <h3 class="feature-item-title"> {props.element.title} </h3>
+        <div className="feature-item">
+            <img src={props.element.image} alt={props.element.alt} className="feature-icon" />
+            <h3 className="feature-item-title"> {props.element.title} </h3>
             <p>
                 {props.element.description}
             </p>

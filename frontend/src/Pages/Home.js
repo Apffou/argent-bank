@@ -4,13 +4,13 @@ import data from '../feature.json';
 
 function Home() {
     return (
-        <body>
+        <>
             <Banner />
             <section className='features'>
-                <h2 class="sr-only">Features</h2>
+                <h2 className="sr-only">Features</h2>
                 {data.map((element) => <Feature element={element} key={element.title} />)}
             </section>
-        </body>
+        </>
     )
 }
 export default Home;
