@@ -64,7 +64,7 @@ function User() {
 
 
     return (
-        <>
+        <div className="main-contain">
             <main className="main bg-dark">
                 <EditUsername />
                 <h2 className="sr-only">Accounts</h2>
@@ -84,7 +84,7 @@ function User() {
                     accountAmountDescr="Current Balance" >
                 </Account>
             </main>
-        </>
+        </div>
     )
 }
 export default User;
