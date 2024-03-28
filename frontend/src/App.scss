@@ -26,11 +26,19 @@ body {
 
 /************************** Sign In */
 
-.main,
-bg-dark {
-  flex: 1;
-  background-color: #12002b;
+.main-contain {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  .main {
+    flex: 1;
+    background-color: #12002b;
+  }
 }
+
+
 
 .sign-in-content {
   box-sizing: border-box;
