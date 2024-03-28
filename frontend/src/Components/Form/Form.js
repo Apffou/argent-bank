@@ -67,16 +67,16 @@ export default function Form() {
     return (
         <form onSubmit={handleSubmit}>
             <div className="input-wrapper">
-                <label for="email">Email</label>
+                <label htmlFor="email">Email</label>
                 <input type="text" id="email" onChange={(e) => setEmail(e.target.value)} />
             </div>
             <div className="input-wrapper">
-                <label for="password">Password</label>
-                <input type="password" id="password" onChange={(e) => setPassword(e.target.value)} />
+                <label htmlFor="password">Password</label>
+                <input type="password" id="password" autoComplete='on' onChange={(e) => setPassword(e.target.value)} />
             </div>
             <div className="input-remember">
                 <input type="checkbox" id="remember-me" />
-                <label for="remember-me">Remember me</label>
+                <label htmlFor="remember-me">Remember me</label>
             </div>
             <button className="sign-in-button" type='submit'>Sign In</button>
             {errorMessage && <p className='userconnection errorMessage'>{errorMessage} </p>}
